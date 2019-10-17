@@ -12,13 +12,22 @@ html,body
 
 *::selection
   background: #fff
-  color: #ffffff
+  color: #673AB7
 *::-moz-selection
   background: #fff
   color: #ffffff
 *::-webkit-selection
   background: #fff
   color: #ffffff
+/* width */
+::-webkit-scrollbar
+  width: 0
+::-webkit-scrollbar-track
+  background: #f1f1f1
+::-webkit-scrollbar-thumb
+  background: #888
+::-webkit-scrollbar-thumb:hover
+  background: #555
 input, textarea
   outline: none
   &:focus
@@ -46,7 +55,6 @@ body
   background-image: radial-gradient(circle at 50% 50%, #737373, #2c2c2c 111%)
   font-family: 'Montserrat', sans-serif
   @include font(500,20px,13px)
-
 img,iframe,video
   width: 100%
   height: 100%
@@ -56,14 +64,19 @@ img,iframe,video
 .container
   max-width: 100%
   height: 100%
+#main
+  display: flex
+  flex-direction: column
+  justify-content: space-between
 //Контейнер главного юзера
 .user-container
-  height: 76%
-  min-height: 500px
+  min-height: 320px
+  height: 90%
   position: relative
   margin: 2%
   .user-img
     width: 100%
+    min-height: 320px
     height: 100%
     border-radius: 5px
     backdrop-filter: blur(29px)
@@ -107,7 +120,7 @@ img,iframe,video
   border-radius: 5px 5px 0 0
 .messages-container
   height: 100%
-  overflow: hidden
+  overflow-y: auto
   display: flex
   flex-direction: column-reverse
 .messageInChat
@@ -219,7 +232,8 @@ img,iframe,video
     height: 96%
 // Контрольная панель
 .control
-  margin: 40px 3% 2% 3%
+  height: 10%
+  margin: 3%
   display: grid
   justify-content: space-between
   grid-template-columns: repeat(3,1fr)
@@ -304,8 +318,10 @@ img,iframe,video
     display: none
 .btn-call
   @include btnIcon('../img/icons/call_end.svg')
-.btn.call.active
+.btn.call
   background-color: #EF5350
+.btn.call.active
+  background-color: #9e9e9e
 .btn-sound
   @include btnIcon('../img/icons/mic.svg')
 .btn-sound.active
