@@ -1,20 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Копирование ссылки при нажатии на кнопку
-  const copyLink = document.querySelector('.link');
-    document.querySelector('.copy-link').addEventListener('click',function () {
-            if (document.selection) {
-                var range = document.body.createTextRange();
-                range.moveToElementText(copyLink);
-                range.select().createTextRange();
-                document.execCommand("Copy");
+    // Копирование ссылки при нажатии на кнопку
+    document.getElementById('copy-link').addEventListener('click',function (e) {
+        //нашли наш контейнер
+        const ta = document.querySelector('.link');
+        //производим его выделение
+        const range = document.createRange();
+        range.selectNode(ta);
+        window.getSelection().addRange(range);
 
-            } else if (window.getSelection) {
-                var range = document.createRange();
-                range.selectNode(copyLink);
-                window.getSelection().addRange(range);
-                document.execCommand("Copy");
-                console.log('copy');
-            }
+        //пытаемся скопировать текст в буфер обмена
+        try {
+            document.execCommand('copy');
+        } catch(err) {
+            console.log('Can`t copy, boss');
+        }
+        //очистим выделение текста, чтобы пользоват
     });
     // Клик на кнопки
     const btnControl = document.querySelectorAll('.btn-icon');

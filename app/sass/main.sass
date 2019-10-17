@@ -9,8 +9,16 @@ html,body
 // Critical css
 ::placeholder
   color: #7c7c7c
-::selection
-  color: #fff
+
+*::selection
+  background: #fff
+  color: #ffffff
+*::-moz-selection
+  background: #fff
+  color: #ffffff
+*::-webkit-selection
+  background: #fff
+  color: #ffffff
 input, textarea
   outline: none
   &:focus
@@ -238,7 +246,12 @@ img,iframe,video
   line-height: 54px
   color: #fff
   opacity: 0.5
-.copy-link
+  background-color: transparent
+  text-align: center
+  outline: transparent
+  border: transparent
+  border-radius: 5px
+#copy-link
   display: block
   width: 55px
   height: 100%
