@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     document.querySelector('.close-chat').addEventListener('click',function (evt) {
         document.querySelector('.chat').classList.remove('active');
+        document.querySelector('.btn.msg').classList.remove('active');
+        document.querySelector('.btn-message').classList.remove('active');
     });
     // Добавление новой кнопки на мобильных устройствах
     const buttonScreen = document.querySelector('.btn-screen');
