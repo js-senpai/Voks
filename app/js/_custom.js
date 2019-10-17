@@ -17,28 +17,27 @@ document.addEventListener("DOMContentLoaded", function() {
             }
     });
     // Клик на кнопки
-    const btnControl = document.querySelectorAll('.btn');
+    const btnControl = document.querySelectorAll('.btn-icon');
     btnControl.forEach((current)=>{
         current.addEventListener('click', (e) => {
             current.classList.toggle('active');
             if(document.querySelector('.btn-message.active')){
                 document.querySelector('.chat').classList.add('active');
+                document.querySelector('.btn.msg').classList.add('active');
             }else{
                 document.querySelector('.chat').classList.remove('active');
+                document.querySelector('.btn.msg').classList.remove('active');
+            }
+            if(document.querySelector('.btn-call.active')){
+                document.querySelector('.btn.call').classList.add('active');
+            }else{
+                document.querySelector('.btn.call').classList.remove('active');
             }
         });
     });
-    // Скролл сообщений
-    const messageContainer = document.querySelector(".messages-container");
-    messageContainer.addEventListener("wheel", function(event) {
-        /*Mouse wheel scrolled down*/
-        if (event.deltaY > 0)
-            messageContainer.scrollTop += 30;
-
-        /*Mouse wheel scrolled up*/
-        else
-            messageContainer.scrollTop -= 30;
-    }, false);
+    document.querySelector('.close-chat').addEventListener('click',function (evt) {
+        document.querySelector('.chat').classList.remove('active');
+    });
     // Добавление новой кнопки на мобильных устройствах
     const buttonScreen = document.querySelector('.btn-screen');
     const windowWidth = window.innerWidth
@@ -66,4 +65,5 @@ document.addEventListener("DOMContentLoaded", function() {
     if(document.querySelector('.control.hidden')){
         document.querySelector('.user-container').style.height = '';
     }
+
 });

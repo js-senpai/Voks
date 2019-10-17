@@ -2,7 +2,7 @@
 @import "fonts"
 @import "libs"
 @import "animations"
-html,body,#main
+html,body
   height: 100vh
   overflow: hidden
   width: 100%
@@ -29,7 +29,7 @@ a
 body
   min-width: 320px
   max-width: 1440px
-  min-height: 474px
+  min-height: 320px
   margin: 0 auto
   width: 100%
   position: relative
@@ -42,22 +42,21 @@ body
 img,iframe,video
   width: 100%
   height: 100%
-#header,#main,#footer
-  overflow: hidden
 .hidden
   display: none !important
 // containers
 .container
   max-width: 100%
   height: 100%
-  padding: 0 20px
 //Контейнер главного юзера
 .user-container
   height: 76%
   min-height: 500px
   position: relative
-  margin-top: 10px
-  img,video,iframe
+  margin: 2%
+  .user-img
+    width: 100%
+    height: 100%
     border-radius: 5px
     backdrop-filter: blur(29px)
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5)
@@ -93,7 +92,7 @@ img,iframe,video
 .chat.active
   display: flex
 .chat-messages
-  height: -webkit-fill-available
+  height: 90%
   overflow: hidden
   background: linear-gradient(0deg, #1C1D1F, #1C1D1F)
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5)
@@ -147,7 +146,7 @@ img,iframe,video
 .chat-submit
   display: block
   width: 24px
-  height: 100%
+  height: auto
   background: url("../img/icons/send.svg") no-repeat center
   background-size: contain
   margin-right: 5px
@@ -160,6 +159,10 @@ img,iframe,video
   overflow: hidden
 .chat-message::placeholder
   line-height: 30px
+.chat-mobile-toggle,.link-mobile-toggle
+  display: none
+.chat-main-container
+  height: inherit
 // Экран предзагрузки пользователя
 .preload-video
   width: 100%
@@ -208,17 +211,17 @@ img,iframe,video
     height: 96%
 // Контрольная панель
 .control
-  margin: 40px 10px 0 10px
+  margin: 40px 3% 2% 3%
   display: grid
   justify-content: space-between
   grid-template-columns: repeat(3,1fr)
-.share-title,.link
-  font-size: 1.4vw
 .share-title
   height: 24px
   opacity: 0.8
   white-space: nowrap
   padding-left: 18px
+  font-weight: 500
+  font-size: 20px
 .share-link
   max-width: 385px
   width: 100%
@@ -233,7 +236,8 @@ img,iframe,video
   display: block
   width: 90%
   line-height: 54px
-  opacity: 0.1
+  color: #fff
+  opacity: 0.5
 .copy-link
   display: block
   width: 55px
@@ -256,12 +260,8 @@ img,iframe,video
   color: #fff
   background-size: 50%
   position: relative
-.btn-screen
-  background-image: url("../img/icons/screen_share.svg")
-.btn-screen.active
-  background-image: url("../img/icons/stop_screen_share.svg")
-.btn-message
-  background-image: url("../img/icons/chat.svg")
+  height: 80px
+.btn:nth-of-type(2)
   .col-messages
     display: block
     position: absolute
@@ -274,22 +274,33 @@ img,iframe,video
     line-height: 30px
     text-align: center
     right: 0
-.btn-message.active
+    top: 0
+.btn-icon
+  display: block
+  width: 100%
+  height: 100%
+.btn-screen
+  @include btnIcon('../img/icons/screen_share.svg')
+.btn-screen.active
+  @include btnIcon('../img/icons/stop_screen_share.svg')
+.btn-message
+  @include btnIcon('../img/icons/chat.svg')
+.btn.msg.active
   background-color: #2196F3
   .col-messages
     display: none
 .btn-call
-  background-image: url("../img/icons/call_end.svg")
-.btn-call.active
+  @include btnIcon('../img/icons/call_end.svg')
+.btn.call.active
   background-color: #EF5350
 .btn-sound
-  background-image: url('../img/icons/mic.svg')
+  @include btnIcon('../img/icons/mic.svg')
 .btn-sound.active
-  background-image: url('../img/icons/mic_off.svg')
+  @include btnIcon('../img/icons/mic_off.svg')
 .btn-video
-  background-image: url('../img/icons/videocam.svg')
+  @include btnIcon('../img/icons/videocam.svg')
 .btn-video.active
-  background-image: url('../img/icons/videocam_off.svg')
+  @include btnIcon('../img/icons/videocam_off.svg')
 .time-container
   text-align: right
   font-size: 90px
