@@ -1,0 +1,38 @@
+
+@mixin font($fontWeight,$fontSize,$lineHeight)
+  font-size: $fontSize
+  font-weight: $fontWeight
+  line-height: $lineHeight
+@mixin backgrounds($url,$color)
+  background: url($url) no-repeat $color
+  background-size: cover
+  background-position: center
+@mixin list-type-none
+  list-style-type: none
+@mixin control-text
+  text-overflow: ellipsis
+  overflow: hidden
+@mixin reset-button
+  border: none
+  outline: none
+@mixin section-margin
+  margin: 0 auto
+  padding: 145px 0
+@mixin button($bgcolor,$color)
+  display: block
+  max-width: 293px
+  width: 100%
+  background: $bgcolor
+  background-size: 100% 100%
+  text-align: center
+  font-size: 14px
+  color: $color
+  border-radius: 5px
+  font-weight: bold
+  cursor: pointer
+@mixin small-btn-color($position)
+  background-image: linear-gradient($position, #a95fa6, #967acb, #7795e6, #4cadf6, #11c4fb)
+@mixin link-hover
+  background-image: linear-gradient(30deg, #a95fa6, #967acb, #7795e6, #4cadf6, #11c4fb)
+  background-clip: text
+  color: transparent
