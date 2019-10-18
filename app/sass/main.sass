@@ -130,7 +130,7 @@ img,iframe,video
   p
     font-size: 11px
     line-height: 13px
-    padding: 10px 5px
+    padding: 15px 5px
     max-width: 100%
     @include font(500,11px,13px)
     mix-blend-mode: normal
@@ -150,6 +150,8 @@ img,iframe,video
     border-radius: 23px
   P
     color: #311B92
+  .smile
+    padding-right: 5px
 .message-second
   justify-content: flex-start
   .message
@@ -172,6 +174,7 @@ img,iframe,video
   background-size: contain
   margin-right: 5px
 .chat-message
+  width: 100%
   background: #292929
   @include reset-button
   font-size: 11px
@@ -233,7 +236,7 @@ img,iframe,video
 // Контрольная панель
 .control
   height: 10%
-  margin: 3%
+  margin: 0 3% 3%
   display: grid
   justify-content: space-between
   grid-template-columns: repeat(3,1fr)
