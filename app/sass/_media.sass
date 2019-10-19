@@ -76,6 +76,12 @@
   .share-container::before
     content: ''
     display: block
+  .control.share-active
+    height: 100%
+  .share-container.share-active
+    display: flex
+    height: 100%
+    flex-direction: column
 @media screen and (orientation: portrait) and (max-width: 890px)
   .other-user-container
     bottom: 20px
@@ -93,6 +99,8 @@
       max-height: 100%
     .other-user,.other-user:nth-of-type(2)
       margin: 10px
+  .share-container.share-active
+    justify-content: center
 @media screen and (orientation: landscape) and (max-width: 890px)
   .share-container.active
     flex-direction: row
@@ -122,6 +130,12 @@
     height: auto
     .other-user
       height: 90px
+  .share-container.share-active
+    justify-content: space-between
+  .control.share-active
+    width: 100%
+    margin: 0
+    padding: 0
 @media only screen and (max-width : 768px)
   /**/
 
