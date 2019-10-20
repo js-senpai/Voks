@@ -81,6 +81,10 @@
   .share-container.share-active
     display: flex
     height: 100%
+    width: 100%
+    position: fixed
+    top: 0
+    left: 0
     flex-direction: column
 @media screen and (orientation: portrait) and (max-width: 890px)
   .other-user-container
@@ -102,7 +106,7 @@
   .share-container.share-active
     justify-content: center
 @media screen and (orientation: landscape) and (max-width: 890px)
-  .share-container.active
+  .share-container.share-active
     flex-direction: row
     align-items: center
   .link-mobile-toggle
@@ -136,6 +140,10 @@
     width: 100%
     margin: 0
     padding: 0
+  .other-user-avatar
+    width: 90px
+    height: 90px
+    line-height: 90px
 @media only screen and (max-width : 768px)
   /**/
 
